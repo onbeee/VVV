@@ -1,0 +1,170 @@
+# 插件库
+# https://hub.kelee.one
+# 规则库
+# https://github.com/luestr/ShuntRules
+# 图标合集
+# https://raw.githubusercontent.com/luestr/IconResource/refs/heads/main/KeLee_icon.json
+# https://raw.githubusercontent.com/luestr/IconResource/refs/heads/main/Flag_icon/ColorfulStaticFlag.json
+# https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/Other/QureColor.json
+
+[General]
+# IP协议模式
+ip-mode = v4-only
+ipv6-vif = off
+
+# DNS解析
+dns-server = 223.5.5.5,119.29.29.29
+doh-server = https://dns.alidns.com/dns-query,https://doh.pub/dns-query
+
+# SNI辅助匹配HTTPS
+sni-sniffing = true
+
+# 流量绕过
+# HTTP代理绕过
+skip-proxy =192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+# TUN旁路
+bypass-tun =10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+
+# DNS / 域名拦截
+dns-reject-mode = LoopbackIP
+domain-reject-mode = DNS
+
+# UDP设置
+# 禁止STUN泄露真实IP
+disable-stun = true
+# 禁止QUIC
+disable-udp-ports = 443
+# UDP不支持时拒绝
+udp-fallback-mode = REJECT
+
+# 网络接口模式
+interface-mode = auto
+
+# 策略切换
+disconnect-on-policy-change = false
+
+# 网络测速
+internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
+proxy-test-url = http://www.gstatic.com/generate_204
+test-timeout = 5
+
+# 数据库
+geoip-url = https://geodata.kelee.one/Country-Masaiki.mmdb
+ipasn-url = https://geodata.kelee.one/GeoLite2-ASN-P3TERX.mmdb
+
+# 解析器
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+
+# WiFi代理
+allow-wifi-access = false
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+
+# 订阅
+[Proxy]
+
+# 远程订阅
+[Remote Proxy]
+
+# 节点筛选
+[Remote Filter]
+所有节点 = NameRegex, FilterKey = "^"
+香港节点 = NameRegex, FilterKey = "香港|港|HK|🇭🇰|(?i)Hong"
+狮城节点 = NameRegex, FilterKey = "新加坡|狮|SG|🇸🇬|(?i)Singapore"
+日本节点 = NameRegex, FilterKey = "日本|日|JP|🇯🇵|(?i)Japan"
+台湾节点 = NameRegex, FilterKey = "台湾|台|TW|🇹🇼|(?i)Taiwan"
+美国节点 = NameRegex, FilterKey = "美国|美|US|🇺🇸|(?i)States"
+常用节点 = NameRegex, FilterKey = "香港|港|HK|🇭🇰|(?i)Hong|新加坡|狮|SG|🇸🇬|(?i)Singapore|日本|日|JP|🇯🇵|(?i)Japan"
+
+# 代理策略
+[Proxy Group]
+策略模式 = select,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+优选模式 = url-test,常用节点,url = http://www.gstatic.com/generate_204,interval = 120,tolerance = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+
+苹果服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
+智能服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChatGPT.png
+谷歌服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png
+微软服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MicrosoftCopilot.png
+推特服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/X.png
+飞机服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Telegram.png
+加密服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OKX.png
+抖音服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png
+Spotify = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Spotify.png
+Ins Ins = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Instagram.png
+
+直连模式 = select,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+禁止模式 = select,REJECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
+
+香港 = url-test,香港节点,url = http://www.gstatic.com/generate_204,interval = 120,tolerance = 60,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/Flag_icon/120px/HK.png
+狮城 = url-test,狮城节点,url = http://www.gstatic.com/generate_204,interval = 120,tolerance = 60,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/Flag_icon/120px/SG.png
+日本 = url-test,日本节点,url = http://www.gstatic.com/generate_204,interval = 120,tolerance = 60,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/Flag_icon/120px/JP.png
+台湾 = url-test,台湾节点,url = http://www.gstatic.com/generate_204,interval = 120,tolerance = 60,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/Flag_icon/120px/CN.png
+美国 = url-test,美国节点,url = http://www.gstatic.com/generate_204,interval = 120,tolerance = 60,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/Flag_icon/120px/UM.png
+
+# 规则
+[Rule]
+DOMAIN-SUFFIX,push.apple.com,优选模式
+FINAL,优选模式
+
+# 远程规则
+[Remote Rule]
+https://rule.kelee.one/Loon/Direct.lsr, policy=直连模式, tag=规则修正, enabled=true
+https://rule.kelee.one/Loon/AdvertisingLite.lsr, policy=禁止模式, tag=禁止广告, enabled=true
+https://rule.kelee.one/Loon/Hijacking.lsr, policy=禁止模式, tag=反劫服务, enabled=true
+https://rule.kelee.one/Loon/Privacy.lsr, policy=禁止模式, tag=隐私保护, enabled=false
+https://rule.kelee.one/Loon/Advertising.lsr, policy=禁止模式, tag=禁止广告, enabled=false
+
+https://rule.kelee.one/Loon/Apple.lsr, policy=苹果服务, tag=苹果服务, enabled=true
+https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=智能服务, tag=智能服务, enabled=true
+https://rule.kelee.one/Loon/Google.lsr, policy=谷歌服务, tag=谷歌服务, enabled=true
+https://rule.kelee.one/Loon/Microsoft.lsr, policy=微软服务, tag=微软服务, enabled=true
+https://rule.kelee.one/Loon/Twitter.lsr, policy=推特服务, tag=推特服务, enabled=true
+https://rule.kelee.one/Loon/Telegram.lsr, policy=飞机服务, tag=飞机服务, enabled=true
+https://raw.githubusercontent.com/onbeee/VVV/refs/heads/main/Loon/Crypto.list, policy=加密服务, tag=加密服务, enabled=true
+https://rule.kelee.one/Loon/TikTok.lsr, policy=抖音服务, tag=抖音服务, enabled=true
+https://rule.kelee.one/Loon/Spotify.lsr, policy=Spotify, tag=Spotify, enabled=true
+https://rule.kelee.one/Loon/Instagram.lsr, policy=Ins Ins, tag=Ins Ins, enabled=true
+
+https://rule.kelee.one/Loon/Proxy.lsr, policy=优选模式, tag=国际服务, enabled=true
+https://rule.kelee.one/Loon/ChinaMax.lsr, policy=直连模式, tag=国内服务, enabled=true
+https://rule.kelee.one/Loon/Lan.lsr, policy=直连模式, tag=局域网络, enabled=true
+https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=直连模式, tag=CN REGION, enabled=true
+
+# 本地映射
+[Host]
+
+# 模块
+[Plugin]
+https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, policy=直连模式, enabled=true
+https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/QiDian_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Spotify_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/NeteaseCloudMusic_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/PinDuoDuo_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/DiDi_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Dewu_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, enabled=true
+
+# 重写
+[Rewrite]
+
+# 远程重写
+[Remote Rewrite]
+
+# 脚本
+[Script]
+
+# 远程脚本
+[Remote Script]
+
+[Mitm]
+hostname =
+skip-server-cert-verify = false
