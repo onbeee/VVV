@@ -103,8 +103,8 @@ Ins Ins = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,�
 
 # 规则
 [Rule]
-DOMAIN-SUFFIX,push.apple.com,优选模式
-FINAL,优选模式
+DOMAIN-SUFFIX,push.apple.com,策略模式
+FINAL,策略模式
 
 # 远程规则
 [Remote Rule]
@@ -125,7 +125,7 @@ https://rule.kelee.one/Loon/TikTok.lsr, policy=抖音服务, tag=抖音服务, e
 https://rule.kelee.one/Loon/Spotify.lsr, policy=Spotify, tag=Spotify, enabled=true
 https://rule.kelee.one/Loon/Instagram.lsr, policy=Ins Ins, tag=Ins Ins, enabled=true
 
-https://rule.kelee.one/Loon/Proxy.lsr, policy=优选模式, tag=国际服务, enabled=true
+https://rule.kelee.one/Loon/Proxy.lsr, policy=策略模式, tag=国际服务, enabled=true
 https://rule.kelee.one/Loon/ChinaMax.lsr, policy=直连模式, tag=国内服务, enabled=true
 https://rule.kelee.one/Loon/Lan.lsr, policy=直连模式, tag=局域网络, enabled=true
 https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=直连模式, tag=CN REGION, enabled=true
