@@ -30,11 +30,8 @@ dns-reject-mode = LoopbackIP
 domain-reject-mode = DNS
 
 # UDP设置
-# 禁止STUN泄露真实IP
 disable-stun = true
-# 禁止QUIC
 disable-udp-ports = 443
-# UDP不支持时拒绝
 udp-fallback-mode = REJECT
 
 # 网络接口模式
@@ -82,15 +79,15 @@ wifi-access-socks5-port = 7221
 优选模式 = url-test,常用节点,url = http://www.gstatic.com/generate_204,interval = 120,tolerance = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
 
 苹果服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
-智能服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChatGPT.png
 谷歌服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png
-微软服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MicrosoftCopilot.png
+智能服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChatGPT.png
 推特服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/X.png
 飞机服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Telegram.png
 加密服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OKX.png
 抖音服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png
 Spotify = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Spotify.png
 Ins Ins = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Instagram.png
+微软服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MicrosoftCopilot.png
 
 直连模式 = select,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 禁止模式 = select,REJECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
@@ -115,15 +112,15 @@ https://rule.kelee.one/Loon/Privacy.lsr, policy=禁止模式, tag=隐私保护, 
 https://rule.kelee.one/Loon/Advertising.lsr, policy=禁止模式, tag=禁止广告, enabled=false
 
 https://rule.kelee.one/Loon/Apple.lsr, policy=苹果服务, tag=苹果服务, enabled=true
-https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=智能服务, tag=智能服务, enabled=true
 https://rule.kelee.one/Loon/Google.lsr, policy=谷歌服务, tag=谷歌服务, enabled=true
-https://rule.kelee.one/Loon/Microsoft.lsr, policy=微软服务, tag=微软服务, enabled=true
+https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=智能服务, tag=智能服务, enabled=true
 https://rule.kelee.one/Loon/Twitter.lsr, policy=推特服务, tag=推特服务, enabled=true
 https://rule.kelee.one/Loon/Telegram.lsr, policy=飞机服务, tag=飞机服务, enabled=true
 https://raw.githubusercontent.com/onbeee/VVV/refs/heads/main/Loon/Crypto.list, policy=加密服务, tag=加密服务, enabled=true
 https://rule.kelee.one/Loon/TikTok.lsr, policy=抖音服务, tag=抖音服务, enabled=true
 https://rule.kelee.one/Loon/Spotify.lsr, policy=Spotify, tag=Spotify, enabled=true
 https://rule.kelee.one/Loon/Instagram.lsr, policy=Ins Ins, tag=Ins Ins, enabled=true
+https://rule.kelee.one/Loon/Microsoft.lsr, policy=微软服务, tag=微软服务, enabled=true
 
 https://rule.kelee.one/Loon/Proxy.lsr, policy=策略模式, tag=国际服务, enabled=true
 https://rule.kelee.one/Loon/ChinaMax.lsr, policy=直连模式, tag=国内服务, enabled=true
